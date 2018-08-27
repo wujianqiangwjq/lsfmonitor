@@ -1,0 +1,31 @@
+syntax="proto3";
+package jobsearch;
+
+service Job{
+	rpc FindJob(Requestjob) returns (Responsejob) {}
+}
+message Requestjob{
+	repeated string user = 1;
+	repeated string status = 2;
+	int64 starttime = 3;
+	int64 endtime = 4;
+	int64 qtime = 5;
+	string jobname = 6;
+}
+message Jobitem{
+	int64 jobid = 1;
+	string jobname = 2;
+	string submiter = 3;
+	int64 starttime = 4;
+	int64 endtime = 5;
+	int64 qtime = 6;
+    string status = 7;
+	repeated string nodes = 8;
+	repeated int64 cpus = 9;
+	repeated int64 gpus = 10;	
+}
+
+message Responsejob {
+	repeated Jobitem jobs = 1;
+}
+

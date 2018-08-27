@@ -1,0 +1,23 @@
+syntax="proto3";
+package job;
+
+service Job{
+	rpc UpdateAndCreateJob(Requestjob) returns (Responsejob) {}
+}
+message Requestjob{
+	int64 jobid = 1;
+	string jobname = 2;
+	string submiter = 3;
+	int64 starttime = 4;
+	int64 endtime = 5;
+	int64 qtime = 6;
+    string status = 7;
+	repeated string nodes = 8;
+	repeated int64 cpus = 9;
+	repeated int64 gpus = 10;	
+}
+
+message Responsejob {
+	int64 status = 1;
+}
+
