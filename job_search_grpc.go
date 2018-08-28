@@ -2,7 +2,7 @@ package main
 
 import (
 	"log"
-	"lsfproject/jobsearch"
+	"lsfmonitor/jobsearch"
 	"net"
 
 	"github.com/mongodb/mongo-go-driver/bson"
